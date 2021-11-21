@@ -23,8 +23,7 @@ class Result {
         int currentJump = 0;
         int maxJump = 2;
 
-        for (int i = 0; i < c.size(); i++) {
-            int currentCloud = c.get(i);
+        for (int currentCloud : c) {
             if (currentCloud == safe) {
                 currentJump++;
 
@@ -33,10 +32,10 @@ class Result {
                     jumps++;
                 }
             } else if (currentCloud == avoid) {
-              if (currentJump < maxJump) {
-                  currentJump = 0;
-                  jumps++;
-              }
+                if (currentJump < maxJump) {
+                    currentJump = 0;
+                    jumps++;
+                }
             }
         }
 
